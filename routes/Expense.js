@@ -64,5 +64,13 @@ res.json({ message: `Expense request ${status} successfully!, expense` });
 res.status(500).json({ message: "Server Error", error: error.message });
 }
 });
+router.get('/filter/:status', fetchuser, async (req, res) => {
+try {
+const expenses = await Expense.find({ status: req.params.status }).populate('employeeId', 'name');
+res.json(expenses);
+} catch (error) {
+res.status(500).json({ message: "Server Error" });
+}
+});
 
 module.exports = router;
