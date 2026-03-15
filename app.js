@@ -6,7 +6,7 @@ const helmet = require('helmet'); // Security headers ke liye: npm install helme
 const connectDB = require('./db/connect');
 
 // Routes Imports
-const AuthRouters = require('./routes/Auth');
+const AuthRouters = require('./routes/authRoutes');
 const ExpenseRouters = require('./routes/Expense'); 
 const AdminRouters = require('./routes/Admin');
 
